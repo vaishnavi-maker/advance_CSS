@@ -1,0 +1,76 @@
+
+/* variable preprocessor */
+
+$fs:60px;
+$col:white;
+$bcol:pink;
+$time:2s;
+$hws:80px;
+$txt_center:center;
+
+//mixin preprocessor using @mixin and @include
+@mixin text_style() { 
+   font-family: 'Times New Roman', Times, serif;
+   font-size: $fs;
+   color: $col;
+   background-color: $bcol;
+}
+div{
+   //nested preprocessor
+   h3{
+      font-family: 'Courier New', Courier, monospace;
+      color: blueviolet;
+   }
+}
+h1{
+   @include text_style();
+}
+
+/* Transform */
+
+#box{
+   text-align: $txt_center;
+   width: $hws;
+   height: $hws;
+   background-color: rgba(172, 221, 243, 0.842);
+   border-radius: 12px;
+   border: solid rgb(172, 221, 243) 4px;
+ 
+}
+#box:hover{ 
+   transform: skew(30deg,30deg);
+}
+
+/* Advance Selector , transition */
+
+//selector
+h3 + div.trans{
+   width: $hws;
+   height: $hws;
+   text-align: $txt_center;
+   background-color: aqua;
+}
+
+//transition
+.trans:hover{
+   width: 500px;
+   transition: width $time ease-out;
+}
+
+
+/* Animation code */
+circle
+{
+   fill: none;
+   stroke: url(#GradientColor);
+   stroke-width: 20px;
+   stroke-dasharray: 472;
+   stroke-dashoffset: 472;/* used for stop the gradient color */
+   animation: anim $time linear forwards;
+}
+
+@keyframes anim {
+   100%{
+      stroke-dashoffset: 0; /* fill 100% */
+   }
+}

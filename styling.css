@@ -1,0 +1,68 @@
+/* variable preprocessor */
+div h3 {
+  font-family: 'Courier New', Courier, monospace;
+  color: blueviolet;
+}
+
+h1 {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 60px;
+  color: white;
+  background-color: pink;
+}
+
+/* Transform */
+#box {
+  text-align: center;
+  width: 80px;
+  height: 80px;
+  background-color: rgba(172, 221, 243, 0.842);
+  border-radius: 12px;
+  border: solid #acddf3 4px;
+}
+
+#box:hover {
+  -webkit-transform: skew(30deg, 30deg);
+          transform: skew(30deg, 30deg);
+}
+
+/* Advance Selector , transition */
+h3 + div.trans {
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  background-color: aqua;
+}
+
+.trans:hover {
+  width: 500px;
+  -webkit-transition: width 2s ease-out;
+  transition: width 2s ease-out;
+}
+
+/* Animation code */
+circle {
+  fill: none;
+  stroke: url(#GradientColor);
+  stroke-width: 20px;
+  stroke-dasharray: 472;
+  stroke-dashoffset: 472;
+  /* used for stop the gradient color */
+  -webkit-animation: anim 2s linear forwards;
+          animation: anim 2s linear forwards;
+}
+
+@-webkit-keyframes anim {
+  100% {
+    stroke-dashoffset: 0;
+    /* fill 100% */
+  }
+}
+
+@keyframes anim {
+  100% {
+    stroke-dashoffset: 0;
+    /* fill 100% */
+  }
+}
+/*# sourceMappingURL=styling.css.map */
