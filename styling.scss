@@ -1,19 +1,20 @@
 
 /* variable preprocessor */
 
-$fs:60px;
+$fs:40px;
 $col:white;
 $bcol:pink;
 $time:2s;
 $hws:80px;
 $txt_center:center;
+$mrg:50px 10px;
 
 //mixin preprocessor using @mixin and @include
 @mixin text_style() { 
    font-family: 'Times New Roman', Times, serif;
    font-size: $fs;
    color: $col;
-   background-color: $bcol;
+   text-align: center;
 }
 div{
    //nested preprocessor
@@ -29,12 +30,14 @@ h1{
 /* Transform */
 
 #box{
+   margin:50px 100px;
    text-align: $txt_center;
    width: $hws;
    height: $hws;
-   background-color: rgba(172, 221, 243, 0.842);
+   background-color: rgba(153, 207, 142, 0.842);
    border-radius: 12px;
-   border: solid rgb(172, 221, 243) 4px;
+   color: white;
+   border: solid rgba(157, 180, 152, 0.842) 4px;
  
 }
 #box:hover{ 
@@ -45,15 +48,17 @@ h1{
 
 //selector
 h3 + div.trans{
+   margin: $mrg;
    width: $hws;
    height: $hws;
+   color: white;
    text-align: $txt_center;
-   background-color: aqua;
+   background-color: rgb(245, 107, 107);
 }
 
 //transition
 .trans:hover{
-   width: 500px;
+   width: 250px;
    transition: width $time ease-out;
 }
 
@@ -61,6 +66,7 @@ h3 + div.trans{
 /* Animation code */
 circle
 {
+   margin: $mrg;
    fill: none;
    stroke: url(#GradientColor);
    stroke-width: 20px;
