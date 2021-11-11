@@ -1,32 +1,67 @@
 <html>
    <head>
-      <title>Advance CSS</title>
+      <title>
+         Grid layout
+      </title>
       <link rel="stylesheet" href="styling.css">
+      <style>
+         *{
+            margin: 0;
+            padding: 0;
+         }
+         .container{
+            display: grid;    
+            height: 100%;
+            background-color: rgba(104, 179, 202, 0.8);
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 43px 1fr 43px;
+            row-gap: 12px;
+            column-gap: 12px;
+            
+         }
+         #item1{
+            background-color: white;
+            height: 300px;
+            width: 300px;
+            text-align: center;
+            align-self: center;
+            place-self: center;
+         }
+         #first{
+            background-color: blue;
+            grid-column: 1 / span 3;
+         }
+         #last{
+            background-color: blue;
+            grid-column: 1 / span 3;
+         }
+      </style>
    </head>
    <body>
-      <h1>
-         ADVANCE CSS
-      </h1>
-      <div>
-         <h3>Animation</h3>
-         
-      </div>
-      
-      <div >
-         <svg width="160px" height="160px">
+      <div class="container">
+         <div id="first"><h1>ADVANCE CSS</h1></div>
+         <div id="item1"> 
+            <h3>Animation</h3>
+            <svg width="160px" height="160px" style="margin: 50px 10px;">
             <defs>
                <linearGradient id="GradientColor">
                   <stop offset="0%" stop-color="gray" />
                   <stop offset="100%" stop-color="red" />
                </linearGradient>
             </defs>
-            <circle cx="80" cy="80" r="70" stroke-linecap="round">
-            </circle>
-         </svg>
-         <h3>Transition</h3>
-         <div class="trans"><h4>Click</h4></div>
-         <h3>Transform</h3>
-         <div id="box"><h4>Click</h4></div>
+               <circle cx="80" cy="80" r="70" stroke-linecap="round">
+               </circle>
+            </svg>
+         </div>
+         <div id="item1">
+            <h3>Transition</h3>
+            <div class="trans"><h4>Click</h4></div>
+         </div>
+         <div id="item1">
+            <h3>Transform</h3>
+            <div id="box"><h4>Click</h4></div>
+         </div>
+         <div id="last"></div>
       </div>
    </body>
 </html>
